@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zirella Wild Flora · Garden Authority</title>
+    <!-- Font & minimal icons (Font Awesome free) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;0,600;0,700;1,400&family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f7f3ec;
+            font-family: 'Inter', sans-serif;
+            color: #1f2a1e;
+            line-height: 1.7;
+            padding: 0 1.5rem;
+        }
+
+        .site-wrap {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #ffffff;
+            box-shadow: 0 0 40px rgba(0,0,0,0.02);
+            padding: 0 2rem 3rem;
+            border-radius: 0 0 24px 24px;
+        }
+
+        /* unique typography & spacing */
+        h1, h2, h3, h4 {
+            font-family: 'IBM Plex Serif', serif;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            line-height: 1.2;
+            margin-top: 2.2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-top: 1.5rem;
+        }
+
+        h2 {
+            font-size: 2.1rem;
+            border-left: 6px solid #4d7c4f;
+            padding-left: 1.2rem;
+            margin: 2.8rem 0 1.2rem 0;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 2rem;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            font-size: 1.05rem;
+            color: #2c3a2b;
+        }
+
+        .text-small {
+            font-size: 0.95rem;
+            color: #4b5e49;
+        }
+
+        .container {
+            max-width: 100%;
+        }
+
+        /* header / nav */
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0 1rem;
+            border-bottom: 2px solid #e3dcd2;
+            flex-wrap: wrap;
+        }
+
+        .brand {
+            font-family: 'IBM Plex Serif', serif;
+            font-size: 1.9rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: #1f3b1e;
+        }
+        .brand i {
+            color: #4d7c4f;
+            margin-right: 0.4rem;
+        }
+        .brand span {
+            font-weight: 400;
+            color: #5f735c;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #2f402d;
+            border-bottom: 2px solid transparent;
+            padding-bottom: 4px;
+            transition: 0.2s;
+        }
+        .nav-links a:hover {
+            border-bottom-color: #4d7c4f;
+            color: #1a2e18;
+        }
+
+        /* hero */
+        .hero {
+            margin: 2.5rem 0 3.5rem;
+            padding: 2.5rem 2.5rem 2.8rem;
+            background: #f0f3ec;
+            border-radius: 28px;
+            position: relative;
+            box-shadow: 0 8px 20px rgba(70, 90, 60, 0.04);
+        }
+
+        .hero h1 {
+            margin-top: 0;
+            font-size: 3.2rem;
+        }
+        .hero h1 i {
+            color: #4d7c4f;
+            font-size: 2.6rem;
+            margin-right: 0.5rem;
+        }
+
+        .hero p {
+            max-width: 780px;
+            font-size: 1.2rem;
+            color: #253523;
+        }
+
+        .hero-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem 3rem;
+            margin-top: 2rem;
+        }
+        .hero-topic {
+            background: white;
+            padding: 0.6rem 1.5rem;
+            border-radius: 40px;
+            font-weight: 500;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+            border: 1px solid #dde0d6;
+        }
+        .hero-topic i {
+            color: #4d7c4f;
+            margin-right: 8px;
+        }
+
+        /* layout: content > visual */
+        .articles-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2.5rem;
+            margin: 3rem 0 2rem;
+        }
+
+        .featured-card {
+            background: #fafbf8;
+            padding: 1.8rem 2rem;
+            border-radius: 24px;
+            border: 1px solid #e3e9dd;
+            transition: 0.1s ease;
+        }
+
+        .featured-card .cat-tag {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            background: #4d7c4f10;
+            padding: 0.2rem 1rem;
+            border-radius: 30px;
+            display: inline-block;
+            color: #3d5f3e;
+            font-weight: 600;
+        }
+
+        .featured-card h3 {
+            margin-top: 0.6rem;
+            font-size: 1.8rem;
+        }
+
+        .meta {
+            color: #4f664c;
+            font-size: 0.9rem;
+            border-bottom: 1px dashed #d4dccc;
+            padding-bottom: 0.6rem;
+            margin-bottom: 1rem;
+        }
+
+        .btn-ghost {
+            background: transparent;
+            border: 2px solid #3a5f3b;
+            padding: 0.5rem 1.8rem;
+            border-radius: 40px;
+            font-weight: 600;
+            color: #1e3a1d;
+            display: inline-block;
+            margin-top: 0.5rem;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+        .btn-ghost:hover {
+            background: #3a5f3b;
+            color: white;
+        }
+
+        .article-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        .list-item {
+            border-bottom: 1px solid #e7ede1;
+            padding-bottom: 1rem;
+        }
+        .list-item h4 {
+            font-size: 1.2rem;
+            margin: 0 0 0.2rem 0;
+        }
+        .list-item .excerpt {
+            font-size: 0.95rem;
+            color: #3b4f39;
+        }
+
+        /* beginner guides etc */
+        .section-title {
+            font-family: 'IBM Plex Serif', serif;
+            font-size: 2rem;
+            margin: 3.5rem 0 1.8rem 0;
+            border-bottom: 3px solid #dde4d4;
+            padding-bottom: 0.5rem;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+        }
+
+        .guide-card {
+            background: #f7faf5;
+            padding: 1.8rem 1.5rem;
+            border-radius: 20px;
+            border: 1px solid #e1e9da;
+        }
+        .guide-card h4 {
+            font-size: 1.3rem;
+            margin: 0 0 0.3rem 0;
+        }
+        .guide-card p {
+            font-size: 0.95rem;
+            color: #3d553b;
+        }
+
+        .table-wrap {
+            background: #f3f7ef;
+            border-radius: 20px;
+            padding: 1.5rem 2rem;
+            margin: 2.5rem 0;
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+        }
+        th {
+            text-align: left;
+            padding: 0.8rem 0.5rem 0.8rem 0;
+            border-bottom: 2px solid #b3c7ab;
+            font-weight: 600;
+        }
+        td {
+            padding: 0.8rem 0.5rem 0.8rem 0;
+            border-bottom: 1px solid #d4dfcb;
+        }
+
+        .faq-item {
+            background: #fafcfa;
+            padding: 1.2rem 1.8rem;
+            border-radius: 20px;
+            border-left: 6px solid #4d7c4f;
+            margin-bottom: 1rem;
+        }
+        .faq-item strong {
+            font-size: 1.1rem;
+        }
+
+        .newsletter {
+            background: #1f2e1d;
+            color: #f2f5ec;
+            padding: 2.5rem 2.8rem;
+            border-radius: 40px;
+            margin: 3rem 0 2rem;
+        }
+        .newsletter h3 {
+            color: #e5efdb;
+            margin-top: 0;
+        }
+        .newsletter input {
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 60px;
+            width: 260px;
+            max-width: 100%;
+            background: #f4f9ef;
+            font-family: 'Inter', sans-serif;
+        }
+        .newsletter button {
+            background: #b6d0a8;
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 60px;
+            font-weight: 600;
+            margin-left: 0.5rem;
+            color: #1e2d1b;
+            cursor: pointer;
+        }
+
+        /* footer */
+        .footer {
+            border-top: 2px solid #e3e3d7;
+            padding-top: 2.5rem;
+            margin-top: 3rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            color: #445c40;
+        }
+
+        /* minimal images */
+        .img-hero {
+            width: 100%;
+            max-height: 180px;
+            object-fit: cover;
+            border-radius: 40px;
+            margin: 1.2rem 0 0.2rem;
+            background: #cedbc2;
+        }
+        .img-feat {
+            width: 100%;
+            max-height: 200px;
+            object-fit: cover;
+            border-radius: 28px;
+            margin: 1rem 0 0.5rem;
+            background: #d9e2cf;
+        }
+        .img-category {
+            width: 100%;
+            max-height: 130px;
+            object-fit: cover;
+            border-radius: 24px;
+            margin: 0.5rem 0;
+            background: #d0dcc4;
+        }
+        .infographic {
+            background: #eaf1e4;
+            padding: 2rem 1.5rem;
+            border-radius: 28px;
+            margin: 2rem 0;
+            text-align: center;
+            font-weight: 500;
+            border: 1px solid #bccdb2;
+        }
+
+        @media (max-width: 800px) {
+            .articles-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .site-wrap {
+                padding: 0 1rem 2rem;
+            }
+            .nav-links {
+                gap: 1rem;
+                flex-wrap: wrap;
+            }
+            .brand {
+                font-size: 1.6rem;
+            }
+            .newsletter input {
+                width: 100%;
+                margin-bottom: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="site-wrap">
+
+    <!-- header -->
+    <header class="top-nav">
+        <div class="brand"><i class="fas fa-leaf"></i>Zirella<span>WildFlora</span></div>
+        <div class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="terms.html">Terms Of Privacy</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+					<li><a href="cookies.html">Cookies Policy</a></li>
+        </div>
+    </header>
+
+    <!-- 1. HERO SECTION -->
+    <section class="hero">
+        <h1><i class="fas fa-seedling"></i> The wild intelligence of gardens</h1>
+        <p>Zirella Wild Flora is a slow–read authority for gardeners who want more than tips — we explore soil ecology, heritage cultivars, and the subtle rhythms of perennial systems. Hundreds of in–depth articles, distilled from decades of hands–on experience.</p>
+        <div class="hero-grid">
+            <span class="hero-topic"><i class="fas fa-tree"></i> Native perennials</span>
+            <span class="hero-topic"><i class="fas fa-worm"></i> Soil food web</span>
+            <span class="hero-topic"><i class="fas fa-sun"></i> Microclimate design</span>
+            <span class="hero-topic"><i class="fas fa-apple-alt"></i> Heirloom vegetables</span>
+            <span class="hero-topic"><i class="fas fa-hand-holding-heart"></i> No–dig systems</span>
+        </div>
+        <!-- 1 hero image -->
+        <img class="img-hero" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='200' viewBox='0 0 800 200'%3E%3Crect width='800' height='200' fill='%23d5e3cc'/%3E%3Ctext x='30' y='120' font-family='Inter, sans-serif' font-size='24' fill='%232b4627'%3E🌱 garden tapestry — layers of perennial abundance%3C/text%3E%3C/svg%3E" alt="garden tapestry hero">
+    </section>
+
+    <!-- 2. FEATURED ARTICLES + SIDEBAR (beginner & expert) -->
+    <div class="articles-grid">
+        <div class="featured-card">
+            <span class="cat-tag"><i class="far fa-newspaper"></i> Featured</span>
+            <h3>Building a resilient food forest on disturbed soil</h3>
+            <div class="meta">By Elara Voss · 12 min read · Updated May 2026</div>
+            <p>Most food forest guides assume pristine land. But what if your plot is compacted, weedy, and acidic? This 3000–word case study follows a three–year transformation using sheet mulching, fungal inoculants, and dynamic accumulators — with measurable biomass increases of 340%.</p>
+            <!-- featured article image -->
+            <img class="img-feat" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='200' viewBox='0 0 600 200'%3E%3Crect width='600' height='200' fill='%23bccdb2'/%3E%3Ctext x='30' y='120' font-family='Inter, sans-serif' font-size='22' fill='%231f3a1b'%3E🌳 food forest strata — canopy to root zone%3C/text%3E%3C/svg%3E" alt="food forest strata">
+            <a href="#" class="btn-ghost">Read full study →</a>
+        </div>
+
+        <div>
+            <h3 style="margin-top:0; font-size:1.4rem; border-left:0; padding-left:0; border-bottom:2px solid #dde4d4; padding-bottom:0.3rem;">Beginner guides</h3>
+            <div class="article-list">
+                <div class="list-item"><h4>Starting a no‑dig bed in 7 days</h4><div class="excerpt">Cardboard, compost, and patience — a step‑by‑step with photos.</div></div>
+                <div class="list-item"><h4>Reading your soil: texture, smell, and life</h4><div class="excerpt">Simple field tests that reveal more than a lab report.</div></div>
+                <div class="list-item"><h4>10 underrated herbs for pollinators</h4><div class="excerpt">Beyond lavender — hyssop, agastache, and mountain mint.</div></div>
+            </div>
+            <div style="margin-top:1.8rem;">
+                <h3 style="font-size:1.4rem; border-left:0; padding-left:0; border-bottom:2px solid #dde4d4; padding-bottom:0.3rem;">Expert resources</h3>
+                <div class="article-list">
+                    <div class="list-item"><h4>Mycorrhizal networks: the wood wide web</h4><div class="excerpt">Fungal trade routes and plant communication.</div></div>
+                    <div class="list-item"><h4>Seed priming and stratification protocols</h4><div class="excerpt">Cold–moist, warm–moist, and gibberellic acid.</div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. POPULAR CATEGORIES (with one category image) -->
+    <h2 class="section-title"><i class="fas fa-th-list"></i> Popular categories</h2>
+    <div class="card-grid">
+        <div class="guide-card"><h4>Perennial vegetables</h4><p>Asparagus, rhubarb, artichoke, and more — 14 profiles.</p><img class="img-category" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='100' viewBox='0 0 300 100'%3E%3Crect width='300' height='100' fill='%23c2d4b5'/%3E%3Ctext x='20' y='65' font-family='Inter, sans-serif' font-size='18' fill='%231f3a1b'%3E🥦 perennial asparagus%3C/text%3E%3C/svg%3E" alt="perennial veg"></div>
+        <div class="guide-card"><h4>Soil ecology</h4><p>Bacteria, fungi, nematodes — the living matrix.</p></div>
+        <div class="guide-card"><h4>Design with climate</h4><p>Rainwater, windbreaks, and thermal mass.</p></div>
+        <div class="guide-card"><h4>Seed saving</h4><p>Heritage varieties and isolation distances.</p></div>
+    </div>
+
+    <!-- 4. IN-DEPTH TUTORIAL + 5. TRENDING -->
+    <div style="display:grid; grid-template-columns: 2fr 1fr; gap:2.5rem; margin:2rem 0;">
+        <div>
+            <h2 style="margin-top:0;">In–depth tutorial</h2>
+            <div style="background:#f2f7ed; padding:1.8rem; border-radius:28px;">
+                <h3 style="margin-top:0;">Grafting heirloom apples: cleft & whip‑and‑tongue</h3>
+                <p>A complete guide with seasonal timing, tool preparation, and aftercare. Includes a compatibility table for 20+ varieties.</p>
+                <div class="table-wrap" style="margin:0.5rem 0 0 0; padding:1rem;">
+                    <table>
+                        <tr><th>Rootstock</th><th>Scion</th><th>Success rate</th></tr>
+                        <tr><td>MM106</td><td>Ashmead’s Kernel</td><td>89%</td></tr>
+                        <tr><td>M9</td><td>Cox’s Orange</td><td>76%</td></tr>
+                        <tr><td>B118</td><td>Northern Spy</td><td>93%</td></tr>
+                    </table>
+                </div>
+                <a href="#" class="btn-ghost" style="margin-top:0.8rem;">Read full tutorial →</a>
+            </div>
+        </div>
+        <div>
+            <h2 style="margin-top:0;">Trending topics</h2>
+            <ul style="list-style: none; padding:0;">
+                <li style="padding:0.4rem 0; border-bottom:1px solid #dfe8d7;"><i class="fas fa-fire" style="color:#4d7c4f;"></i>  Hügelkultur in dry climates</li>
+                <li style="padding:0.4rem 0; border-bottom:1px solid #dfe8d7;"><i class="fas fa-fire" style="color:#4d7c4f;"></i>  Biochar + compost tea trials</li>
+                <li style="padding:0.4rem 0; border-bottom:1px solid #dfe8d7;"><i class="fas fa-fire" style="color:#4d7c4f;"></i>  Allelopathy in walnut gardens</li>
+                <li style="padding:0.4rem 0;"><i class="fas fa-fire" style="color:#4d7c4f;"></i>  Native bee hotels: design & placement</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 6. LATEST ARTICLES (grid) -->
+    <h2 class="section-title"><i class="far fa-clock"></i> Latest articles</h2>
+    <div class="card-grid">
+        <div class="guide-card"><h4>Summer pruning for stone fruits</h4><p>Reduce disease pressure and improve next year’s crop.</p></div>
+        <div class="guide-card"><h4>Foliar feeding: myths and science</h4><p>When to spray and when to save your time.</p></div>
+        <div class="guide-card"><h4>Designing a moon garden</h4><p>White flowers and night–scented plants for evening enjoyment.</p></div>
+    </div>
+
+    <!-- 7. RESOURCE HUB + INFOGRAPHIC (optional) -->
+    <div style="background:#f0f5ea; border-radius:32px; padding:1.8rem 2.2rem; margin:2.8rem 0;">
+        <h2 style="margin-top:0; border-left:0; padding-left:0;">Resource hub</h2>
+        <div style="display:flex; flex-wrap:wrap; gap:1.5rem;">
+            <div><strong>📘 45+ plant profiles</strong> — cultural notes, propagation, harvest.</div>
+            <div><strong>🧪 Soil test interpreter</strong> — pH, NPK, and organic matter.</div>
+            <div><strong>🗓️ Seasonal task calendar</strong> — zone 5–9.</div>
+        </div>
+        <!-- infographic image -->
+        <div class="infographic"><i class="fas fa-chart-pie" style="margin-right:10px;"></i> Infographic: 5 layers of a perennial polyculture (canopy, sub‑canopy, shrub, herb, root)</div>
+    </div>
+
+    <!-- 8. FAQ SECTION -->
+    <h2 class="section-title"><i class="fas fa-question-circle"></i> Frequently asked questions</h2>
+    <div class="faq-item"><strong>How do I improve heavy clay soil without tilling?</strong><br> Use gypsum, organic mulch, and plant daikon radish as a bio‑drill. We detail the process in our soil series.</div>
+    <div class="faq-item"><strong>What are the best low‑maintenance perennials for pollinators?</strong><br> Echinacea, rudbeckia, and solidago — but also consider native monarda and agastache.</div>
+    <div class="faq-item"><strong>When should I start seeds indoors vs direct sow?</strong><br> Depends on crop and climate. Our seed‑starting matrix (free download) gives specific recommendations.</div>
+
+    <!-- 9. NEWSLETTER -->
+    <div class="newsletter">
+        <h3><i class="fas fa-envelope"></i>  The Flora Dispatch</h3>
+        <p style="color:#d8e5cf;">Weekly insights, no fluff. One long‑form article plus a micro‑soil‑tip.</p>
+        <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+            <input type="email" placeholder="Your email address">
+            <button>Subscribe</button>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div>© 2026 Zirella Wild Flora · garden intelligence</div>
+        <div><i class="fab fa-twitter"></i> <i class="fab fa-bluesky"></i> <i class="fab fa-rss"></i>  ·  contact@zirellawildflora.com</div>
+    </footer>
+</div>
+<!-- end site-wrap -->
+</body>
+</html>

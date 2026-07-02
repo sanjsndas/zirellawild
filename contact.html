@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact · Zirella Wild Flora</title>
+    <!-- Font Awesome & Google Fonts (same as main) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;0,600;0,700;1,400&family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <style>
+        /* ----- reset & base (mirror of main) ----- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f7f3ec;
+            font-family: 'Inter', sans-serif;
+            color: #1f2a1e;
+            line-height: 1.7;
+            padding: 0 1.5rem;
+        }
+
+        .site-wrap {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #ffffff;
+            box-shadow: 0 0 40px rgba(0,0,0,0.02);
+            padding: 0 2rem 3rem;
+            border-radius: 0 0 24px 24px;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'IBM Plex Serif', serif;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            line-height: 1.2;
+            margin-top: 2.2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-top: 1.5rem;
+        }
+
+        h2 {
+            font-size: 2.1rem;
+            border-left: 6px solid #4d7c4f;
+            padding-left: 1.2rem;
+            margin: 2.8rem 0 1.2rem 0;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            font-size: 1.05rem;
+            color: #2c3a2b;
+        }
+
+        .text-small {
+            font-size: 0.95rem;
+            color: #4b5e49;
+        }
+
+        /* ----- header / nav (exact same) ----- */
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0 1rem;
+            border-bottom: 2px solid #e3dcd2;
+            flex-wrap: wrap;
+        }
+
+        .brand {
+            font-family: 'IBM Plex Serif', serif;
+            font-size: 1.9rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: #1f3b1e;
+        }
+        .brand i {
+            color: #4d7c4f;
+            margin-right: 0.4rem;
+        }
+        .brand span {
+            font-weight: 400;
+            color: #5f735c;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            font-weight: 500;
+            font-size: 0.95rem;
+            flex-wrap: wrap;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #2f402d;
+            border-bottom: 2px solid transparent;
+            padding-bottom: 4px;
+            transition: 0.2s;
+        }
+        .nav-links a:hover {
+            border-bottom-color: #4d7c4f;
+            color: #1a2e18;
+        }
+        .nav-links li {
+            list-style: none;
+        }
+
+        /* ----- contact hero (soft variation) ----- */
+        .contact-hero {
+            background: #f0f5ea;
+            border-radius: 28px;
+            padding: 2.5rem 2.8rem;
+            margin: 2rem 0 2.5rem;
+            box-shadow: 0 8px 20px rgba(70, 90, 60, 0.04);
+        }
+        .contact-hero h1 {
+            margin-top: 0;
+            font-size: 2.8rem;
+        }
+        .contact-hero h1 i {
+            color: #4d7c4f;
+            margin-right: 0.6rem;
+        }
+        .contact-hero p {
+            max-width: 720px;
+            font-size: 1.2rem;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            margin: 2.5rem 0 2rem;
+        }
+
+        /* contact form */
+        .form-card {
+            background: #fafbf8;
+            border: 1px solid #e3e9dd;
+            border-radius: 28px;
+            padding: 2rem 2.2rem;
+        }
+        .form-card h3 {
+            margin-top: 0;
+            font-size: 1.8rem;
+        }
+        .form-group {
+            margin-bottom: 1.4rem;
+        }
+        .form-group label {
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: block;
+            margin-bottom: 0.3rem;
+            color: #2b4028;
+        }
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1px solid #d6dfcc;
+            border-radius: 40px;
+            font-family: 'Inter', sans-serif;
+            background: white;
+            font-size: 1rem;
+            transition: 0.15s;
+        }
+        .form-group textarea {
+            border-radius: 24px;
+            min-height: 130px;
+            resize: vertical;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #4d7c4f;
+            box-shadow: 0 0 0 3px #4d7c4f20;
+        }
+
+        .btn-primary {
+            background: #1f3b1e;
+            border: none;
+            padding: 0.9rem 2.8rem;
+            border-radius: 60px;
+            font-weight: 700;
+            color: white;
+            font-size: 1.05rem;
+            cursor: pointer;
+            transition: 0.15s;
+            font-family: 'Inter', sans-serif;
+        }
+        .btn-primary:hover {
+            background: #3a5f3b;
+            transform: scale(1.01);
+        }
+
+        /* contact info side */
+        .info-side {
+            display: flex;
+            flex-direction: column;
+            gap: 1.8rem;
+        }
+        .info-card {
+            background: #f7faf5;
+            border-radius: 24px;
+            padding: 1.8rem 2rem;
+            border: 1px solid #e1e9da;
+        }
+        .info-card h4 {
+            margin-top: 0;
+            font-size: 1.3rem;
+        }
+        .info-card i {
+            color: #4d7c4f;
+            width: 2rem;
+            font-size: 1.4rem;
+        }
+        .info-card .detail-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            font-size: 1.6rem;
+            margin-top: 0.3rem;
+        }
+        .social-links a {
+            color: #2f402d;
+            transition: 0.15s;
+        }
+        .social-links a:hover {
+            color: #4d7c4f;
+        }
+
+        .faq-mini {
+            background: #f3f7ef;
+            border-radius: 24px;
+            padding: 1.5rem 2rem;
+            border-left: 6px solid #4d7c4f;
+        }
+        .faq-mini strong {
+            font-size: 1.1rem;
+        }
+
+        .map-placeholder {
+            background: #d9e2cf;
+            border-radius: 28px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            font-weight: 500;
+            border: 1px solid #bccdb2;
+            margin: 1.5rem 0 0.5rem;
+        }
+
+        /* footer (same) */
+        .footer {
+            border-top: 2px solid #e3e3d7;
+            padding-top: 2.5rem;
+            margin-top: 3rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            color: #445c40;
+        }
+
+        /* responsive */
+        @media (max-width: 800px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            .site-wrap {
+                padding: 0 1rem 2rem;
+            }
+            .nav-links {
+                gap: 1rem;
+            }
+            .brand {
+                font-size: 1.6rem;
+            }
+            .contact-hero h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="site-wrap">
+
+    <!-- header (identical to main) -->
+    <header class="top-nav">
+        <div class="brand"><i class="fas fa-leaf"></i>Zirella<span>WildFlora</span></div>
+        <div class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html" style="border-bottom-color:#4d7c4f;">Contact</a></li>
+            <li><a href="terms.html">Terms Of Privacy</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="cookies.html">Cookies Policy</a></li>
+        </div>
+    </header>
+
+    <!-- contact hero -->
+    <section class="contact-hero">
+        <h1><i class="fas fa-paper-plane"></i> Let’s cultivate a conversation</h1>
+        <p>We’re a small team of gardeners, writers, and soil enthusiasts. Whether you have a question about a specific article, a garden puzzle, or just want to share your story — we’d love to hear from you. </p>
+        <div style="display:flex; flex-wrap:wrap; gap:1.5rem; margin-top:1.5rem;">
+            <span style="background:white; padding:0.3rem 1.6rem; border-radius:40px; border:1px solid #dde0d6;"><i class="fas fa-clock" style="color:#4d7c4f;"></i> Reply within 48h</span>
+            <span style="background:white; padding:0.3rem 1.6rem; border-radius:40px; border:1px solid #dde0d6;"><i class="fas fa-seedling" style="color:#4d7c4f;"></i> No automated responses</span>
+        </div>
+    </section>
+
+    <!-- contact grid: form + info -->
+    <div class="contact-grid">
+        <!-- form -->
+        <div class="form-card">
+            <h3><i class="fas fa-pen-fancy" style="color:#4d7c4f; margin-right:8px;"></i>Send us a message</h3>
+            <p style="font-size:0.95rem; margin-bottom:1.8rem;">All fields are optional, but we’d love to know who we’re talking to.</p>
+            <form>
+                <div class="form-group">
+                    <label for="name"><i class="far fa-user"></i> Name or alias</label>
+                    <input type="text" id="name" placeholder="e.g. Clara, or your garden name">
+                </div>
+                <div class="form-group">
+                    <label for="email"><i class="far fa-envelope"></i> Email address</label>
+                    <input type="email" id="email" placeholder="you@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="topic"><i class="fas fa-tag"></i> Topic</label>
+                    <select id="topic">
+                        <option>General inquiry</option>
+                        <option>Article suggestion</option>
+                        <option>Garden question</option>
+                        <option>Partnership / media</option>
+                        <option>Website feedback</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message"><i class="fas fa-message"></i> Message</label>
+                    <textarea id="message" placeholder="Tell us about your garden, your question, or just say hello …"></textarea>
+                </div>
+                <button type="submit" class="btn-primary"><i class="fas fa-leaf" style="margin-right:8px;"></i>Send message</button>
+            </form>
+        </div>
+
+        <!-- info side -->
+        <div class="info-side">
+            <div class="info-card">
+                <h4><i class="fas fa-address-card" style="margin-right:8px;"></i> Direct lines</h4>
+                <div class="detail-row"><i class="fas fa-envelope"></i> <span>hello@zirellawildflora.com</span></div>
+                <div class="detail-row"><i class="fas fa-phone-alt"></i> <span>+1 (800) 555‑GARDEN</span></div>
+                <div class="detail-row"><i class="fas fa-map-pin"></i> <span>Wild Flora HQ · 42 Meadow Lane, VT</span></div>
+                <div style="margin-top: 1rem;">
+                    <span class="text-small"><i class="far fa-clock"></i> Office hours: Mon–Fri 9am–6pm (EST)</span>
+                </div>
+            </div>
+
+            <div class="info-card" style="background:#f0f5ea;">
+                <h4><i class="fas fa-users"></i> Community & social</h4>
+                <p style="font-size:0.95rem;">We’re most active on Bluesky and Mastodon — follow for daily micro‑insights.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Bluesky"><i class="fab fa-bluesky"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Mastodon"><i class="fab fa-mastodon"></i></a>
+                    <a href="#" aria-label="RSS"><i class="fas fa-rss"></i></a>
+                </div>
+            </div>
+
+            <!-- mini FAQ / quick answer -->
+            <div class="faq-mini">
+                <strong><i class="fas fa-question-circle" style="color:#4d7c4f;"></i> Before you write …</strong>
+                <ul style="margin-top:0.5rem; list-style: none; padding-left:0; font-size:0.95rem;">
+                    <li style="padding:0.2rem 0;">• For seed / plant identification, attach a photo.</li>
+                    <li style="padding:0.2rem 0;">• We don’t offer individual consulting, but we read every message.</li>
+                    <li style="padding:0.2rem 0;">• Want to contribute? Send a pitch with 2‑3 sample paragraphs.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- map / garden location (visual) -->
+    <div class="map-placeholder">
+        <i class="fas fa-map-marked-alt" style="font-size:2rem; color:#4d7c4f; display:block; margin-bottom:0.5rem;"></i>
+        <span style="font-weight:600;">📍 Our garden is open by appointment — we host seasonal workshops.</span><br>
+        <span class="text-small">(We’re nestled between the Green Mountains and the river.)</span>
+    </div>
+
+    <!-- small note: contact page is also a resource -->
+    <div style="background:#fafcfa; border-radius:24px; padding:1.5rem 2rem; margin:2rem 0; border:1px solid #e1e9da;">
+        <p style="margin:0; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap;">
+            <i class="fas fa-podcast" style="color:#4d7c4f; font-size:1.6rem;"></i>
+            <span><strong>Listen to our podcast?</strong> We release monthly interviews with ecologists and heirloom growers. <a href="#" style="color:#2f402d; font-weight:600; text-decoration:underline;">Subscribe here</a>.</span>
+        </p>
+    </div>
+
+    <!-- footer -->
+    <footer class="footer">
+        <div>© 2026 Zirella Wild Flora · garden intelligence</div>
+        <div><i class="fab fa-twitter"></i> <i class="fab fa-bluesky"></i> <i class="fab fa-rss"></i>  ·  contact@zirellawildflora.com</div>
+    </footer>
+</div>
+<!-- end site-wrap -->
+</body>
+</html>

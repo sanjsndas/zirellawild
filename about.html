@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About · Zirella Wild Flora</title>
+    <!-- Font Awesome & Google Fonts (same as main) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;0,600;0,700;1,400&family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <style>
+        /* ===== global reset & base ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f7f3ec;
+            font-family: 'Inter', sans-serif;
+            color: #1f2a1e;
+            line-height: 1.7;
+            padding: 0 1.5rem;
+        }
+
+        .site-wrap {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #ffffff;
+            box-shadow: 0 0 40px rgba(0,0,0,0.02);
+            padding: 0 2rem 3rem;
+            border-radius: 0 0 24px 24px;
+        }
+
+        /* typography */
+        h1, h2, h3, h4 {
+            font-family: 'IBM Plex Serif', serif;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            line-height: 1.2;
+            margin-top: 2.2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-top: 1.5rem;
+        }
+
+        h2 {
+            font-size: 2.1rem;
+            border-left: 6px solid #4d7c4f;
+            padding-left: 1.2rem;
+            margin: 2.8rem 0 1.2rem 0;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 2rem;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            font-size: 1.05rem;
+            color: #2c3a2b;
+        }
+
+        .text-small {
+            font-size: 0.95rem;
+            color: #4b5e49;
+        }
+
+        /* header / nav */
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0 1rem;
+            border-bottom: 2px solid #e3dcd2;
+            flex-wrap: wrap;
+        }
+
+        .brand {
+            font-family: 'IBM Plex Serif', serif;
+            font-size: 1.9rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: #1f3b1e;
+        }
+        .brand i {
+            color: #4d7c4f;
+            margin-right: 0.4rem;
+        }
+        .brand span {
+            font-weight: 400;
+            color: #5f735c;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            font-weight: 500;
+            font-size: 0.95rem;
+            flex-wrap: wrap;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #2f402d;
+            border-bottom: 2px solid transparent;
+            padding-bottom: 4px;
+            transition: 0.2s;
+        }
+        .nav-links a:hover {
+            border-bottom-color: #4d7c4f;
+            color: #1a2e18;
+        }
+
+        /* about hero */
+        .about-hero {
+            margin: 2.5rem 0 2.5rem;
+            padding: 2.8rem 2.8rem 3rem;
+            background: #f0f3ec;
+            border-radius: 28px;
+            box-shadow: 0 8px 20px rgba(70, 90, 60, 0.04);
+        }
+        .about-hero h1 {
+            margin-top: 0;
+            font-size: 3.2rem;
+        }
+        .about-hero h1 i {
+            color: #4d7c4f;
+            margin-right: 0.7rem;
+        }
+        .about-hero p {
+            max-width: 760px;
+            font-size: 1.2rem;
+            color: #253523;
+        }
+
+        .pill-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem 1.8rem;
+            margin-top: 1.8rem;
+        }
+        .pill {
+            background: white;
+            padding: 0.5rem 1.8rem;
+            border-radius: 40px;
+            font-weight: 500;
+            border: 1px solid #dde0d6;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+        }
+        .pill i {
+            color: #4d7c4f;
+            margin-right: 8px;
+        }
+
+        /* cards, grids */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .stat-card {
+            background: #fafbf8;
+            padding: 1.8rem 1.5rem;
+            border-radius: 24px;
+            border: 1px solid #e3e9dd;
+            text-align: center;
+        }
+        .stat-card .number {
+            font-family: 'IBM Plex Serif', serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #1f3b1e;
+            line-height: 1;
+        }
+        .stat-card .label {
+            font-weight: 500;
+            color: #3d553b;
+            margin-top: 0.3rem;
+        }
+
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        .story-card {
+            background: #f7faf5;
+            padding: 1.8rem 2rem;
+            border-radius: 24px;
+            border: 1px solid #e1e9da;
+        }
+        .story-card h3 {
+            margin-top: 0;
+        }
+
+        .img-about {
+            width: 100%;
+            max-height: 200px;
+            object-fit: cover;
+            border-radius: 28px;
+            margin: 1.2rem 0 0.2rem;
+            background: #cedbc2;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 1.8rem;
+            margin: 1.5rem 0 2rem;
+        }
+        .team-member {
+            background: #fafbf8;
+            padding: 1.5rem 1rem;
+            border-radius: 28px;
+            border: 1px solid #e3e9dd;
+            text-align: center;
+        }
+        .team-member .avatar {
+            font-size: 3.2rem;
+            margin-bottom: 0.3rem;
+        }
+        .team-member .name {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        .team-member .role {
+            font-size: 0.9rem;
+            color: #4b5e49;
+        }
+
+        .table-wrap {
+            background: #f3f7ef;
+            border-radius: 20px;
+            padding: 1.5rem 2rem;
+            margin: 2.5rem 0;
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+        }
+        th {
+            text-align: left;
+            padding: 0.8rem 0.5rem 0.8rem 0;
+            border-bottom: 2px solid #b3c7ab;
+            font-weight: 600;
+        }
+        td {
+            padding: 0.8rem 0.5rem 0.8rem 0;
+            border-bottom: 1px solid #d4dfcb;
+        }
+
+        .footer {
+            border-top: 2px solid #e3e3d7;
+            padding-top: 2.5rem;
+            margin-top: 3rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            color: #445c40;
+        }
+
+        @media (max-width: 800px) {
+            .story-grid {
+                grid-template-columns: 1fr;
+            }
+            .about-hero h1 {
+                font-size: 2.5rem;
+            }
+            .site-wrap {
+                padding: 0 1rem 2rem;
+            }
+            .nav-links {
+                gap: 1rem;
+            }
+            .brand {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="site-wrap">
+
+    <!-- header (identical to main) -->
+    <header class="top-nav">
+        <div class="brand"><i class="fas fa-leaf"></i>Zirella<span>WildFlora</span></div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html" style="border-bottom-color:#4d7c4f;">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="terms.html">Terms Of Privacy</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="cookies.html">Cookies Policy</a>
+        </div>
+    </header>
+
+    <!-- ABOUT HERO -->
+    <section class="about-hero">
+        <h1><i class="fas fa-seedling"></i> Rooted in observation</h1>
+        <p>Zirella Wild Flora is not a blog — it is a living archive. We combine ecological horticulture, deep soil science, and heritage plant knowledge. Founded in 2018, we have grown into a quiet community of growers, designers, and stewards.</p>
+        <div class="pill-group">
+            <span class="pill"><i class="fas fa-leaf"></i> 100% ad‑free</span>
+            <span class="pill"><i class="fas fa-book-open"></i> 400+ in‑depth guides</span>
+            <span class="pill"><i class="fas fa-flask"></i> field‑tested protocols</span>
+            <span class="pill"><i class="fas fa-globe-americas"></i> global bioregions</span>
+        </div>
+        <!-- hero image -->
+        <img class="img-about" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='180' viewBox='0 0 800 180'%3E%3Crect width='800' height='180' fill='%23d5e3cc'/%3E%3Ctext x='30' y='100' font-family='Inter, sans-serif' font-size='22' fill='%232b4627'%3E🌿 observation — the gardener’s first tool%3C/text%3E%3C/svg%3E" alt="about hero">
+    </section>
+
+    <!-- STATS + MISSION -->
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:2rem; margin:1rem 0 2rem;">
+        <div>
+            <h2 style="margin-top:0; border-left:0; padding-left:0;">Our mission</h2>
+            <p>To cultivate ecological literacy through meticulous documentation. We believe that gardens are not products but relationships — between plants, fungi, insects, and people. Every article is reviewed by at least two practicing horticulturists.</p>
+            <p><i class="fas fa-check-circle" style="color:#4d7c4f; margin-right:6px;"></i> Science‑backed, but grounded in tactile wisdom</p>
+            <p><i class="fas fa-check-circle" style="color:#4d7c4f; margin-right:6px;"></i> No generic advice — we tailor to bioregion and context</p>
+        </div>
+        <div>
+            <div class="card-grid" style="grid-template-columns:1fr 1fr; gap:1rem; margin:0;">
+                <div class="stat-card"><div class="number">400+</div><div class="label">articles</div></div>
+                <div class="stat-card"><div class="number">86</div><div class="label">plant families</div></div>
+                <div class="stat-card"><div class="number">12</div><div class="label">bioregions</div></div>
+                <div class="stat-card"><div class="number">7</div><div class="label">years of writing</div></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- STORY: HOW WE STARTED + TEAM -->
+    <h2><i class="fas fa-tree"></i> Our story & team</h2>
+    <div class="story-grid">
+        <div class="story-card">
+            <h3>Started in a coastal garden</h3>
+            <p>Zirella Wild Flora began as a handwritten notebook in a foggy corner of Northern California. Over time, it grew into a collaborative project with ecologists, herbalists, and permaculture designers. We are not academics — but we read deeply and observe relentlessly.</p>
+            <p><i class="fas fa-quote-left" style="color:#4d7c4f; opacity:0.6;"></i> The garden is the oldest library, and we are still learning to read.</p>
+        </div>
+        <div class="story-card">
+            <h3>Core team</h3>
+            <div class="team-grid" style="grid-template-columns:1fr 1fr; gap:1rem; margin:0.5rem 0 0;">
+                <div class="team-member"><div class="avatar">🌱</div><div class="name">Elara Voss</div><div class="role">editor & soil ecologist</div></div>
+                <div class="team-member"><div class="avatar">🍄</div><div class="name">Micah Chen</div><div class="role">fungal networks</div></div>
+                <div class="team-member"><div class="avatar">🌾</div><div class="name">Rosa Delgado</div><div class="role">heritage seeds</div></div>
+                <div class="team-member"><div class="avatar">🪴</div><div class="name">Tomas J. </div><div class="role">design & climate</div></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TIMELINE / MILESTONES (table style) -->
+    <div class="table-wrap">
+        <h3 style="margin:0 0 1rem 0; font-family:'IBM Plex Serif',serif;">Milestones</h3>
+        <table>
+            <tr><th>Year</th><th>Milestone</th></tr>
+            <tr><td>2018</td><td>First field journal published online</td></tr>
+            <tr><td>2019</td><td>Soil food web series (50+ articles)</td></tr>
+            <tr><td>2021</td><td>Collaborative food forest trial, zone 8b</td></tr>
+            <tr><td>2023</td><td>Expanded to temperate & mediterranean bioregions</td></tr>
+            <tr><td>2025</td><td>Launched Flora Dispatch newsletter (8k subscribers)</td></tr>
+        </table>
+    </div>
+
+    <!-- WHAT WE BELIEVE (values) -->
+    <h2><i class="fas fa-hand-holding-heart"></i> Guiding principles</h2>
+    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(180px,1fr)); gap:1.8rem; margin:1.5rem 0;">
+        <div style="background:#fafbf8; padding:1.5rem; border-radius:24px; border:1px solid #e3e9dd;">
+            <div style="font-size:2rem;">🧑‍🌾</div>
+            <h4 style="margin:0.3rem 0 0.2rem;">Observation first</h4>
+            <p style="font-size:0.95rem;">Every recommendation begins with what you see, smell, and feel in your own place.</p>
+        </div>
+        <div style="background:#fafbf8; padding:1.5rem; border-radius:24px; border:1px solid #e3e9dd;">
+            <div style="font-size:2rem;">🔄</div>
+            <h4 style="margin:0.3rem 0 0.2rem;">Cycles, not fixes</h4>
+            <p style="font-size:0.95rem;">We avoid quick fixes — instead we work with succession, decay, and regeneration.</p>
+        </div>
+        <div style="background:#fafbf8; padding:1.5rem; border-radius:24px; border:1px solid #e3e9dd;">
+            <div style="font-size:2rem;">🌍</div>
+            <h4 style="margin:0.3rem 0 0.2rem;">Bioregional humility</h4>
+            <p style="font-size:0.95rem;">What works in one region may fail in another. We honor local ecotypes.</p>
+        </div>
+        <div style="background:#fafbf8; padding:1.5rem; border-radius:24px; border:1px solid #e3e9dd;">
+            <div style="font-size:2rem;">📚</div>
+            <h4 style="margin:0.3rem 0 0.2rem;">Slow knowledge</h4>
+            <p style="font-size:0.95rem;">We publish long‑form, deeply researched pieces — no algorithm churn.</p>
+        </div>
+    </div>
+
+    <!-- PARTNERS / ACKNOWLEDGMENTS -->
+    <div style="background:#f0f5ea; border-radius:32px; padding:1.8rem 2.2rem; margin:2.5rem 0;">
+        <h2 style="margin-top:0; border-left:0; padding-left:0;"><i class="fas fa-handshake"></i> Collaborators</h2>
+        <div style="display:flex; flex-wrap:wrap; gap:1.5rem 2.5rem; font-size:1rem;">
+            <span><i class="fas fa-seedling" style="color:#4d7c4f;"></i> Ecological Landscape Alliance</span>
+            <span><i class="fas fa-flask" style="color:#4d7c4f;"></i> Soil Foodweb School</span>
+            <span><i class="fas fa-tree" style="color:#4d7c4f;"></i> Heritage Seed Library</span>
+            <span><i class="fas fa-water" style="color:#4d7c4f;"></i> Permaculture Institute</span>
+        </div>
+        <p style="font-size:0.95rem; margin-top:1.2rem; color:#2f402d;">We are an independent publication, not affiliated with any commercial brand. Our work is supported by reader subscriptions and small grants.</p>
+    </div>
+
+    <!-- NEWSLETTER (same as main) -->
+    <div style="background:#1f2e1d; color:#f2f5ec; padding:2.5rem 2.8rem; border-radius:40px; margin:3rem 0 2rem;">
+        <h3 style="color:#e5efdb; margin-top:0;"><i class="fas fa-envelope"></i>  The Flora Dispatch</h3>
+        <p style="color:#d8e5cf;">Weekly insights, no fluff. One long‑form article plus a micro‑soil‑tip.</p>
+        <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+            <input type="email" placeholder="Your email address" style="padding:0.8rem 1.5rem; border:none; border-radius:60px; width:260px; max-width:100%; background:#f4f9ef; font-family:'Inter',sans-serif;">
+            <button style="background:#b6d0a8; border:none; padding:0.8rem 2rem; border-radius:60px; font-weight:600; margin-left:0.5rem; color:#1e2d1b; cursor:pointer;">Subscribe</button>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div>© 2026 Zirella Wild Flora · garden intelligence</div>
+        <div><i class="fab fa-twitter"></i> <i class="fab fa-bluesky"></i> <i class="fab fa-rss"></i>  ·  contact@zirellawildflora.com</div>
+    </footer>
+
+</div>
+<!-- end site-wrap -->
+</body>
+</html>
