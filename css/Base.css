@@ -1912,7 +1912,7 @@ html {
 }
 
 #ac-globalnav .ac-gn-link-mac {
-    background-image: url(../image_large_3.html);
+    background-image: url(../image_large_1.html);
     background-origin: content-box;
     background-size: cover;
     width: 2em;
@@ -1928,7 +1928,7 @@ html {
 }
 
 #ac-globalnav .ac-gn-link-ipad {
-    background-image: url(../image_large_4.html);
+    background-image: url(../image_large_3.html);
     background-origin: content-box;
     background-size: cover;
     width: 1.92857em;
@@ -1939,12 +1939,12 @@ html {
     #ac-globalnav .ac-gn-link-ipad {
         background-size: 33px 42px;
         background-repeat: no-repeat;
-        background-image: url(../image_small_2.html)
+        background-image: url(../image_small_1.html)
     }
 }
 
 #ac-globalnav .ac-gn-link-iphone {
-    background-image: url(../image_large_1.html);
+    background-image: url(../image_large_6.html);
     background-origin: content-box;
     background-size: cover;
     width: 3.14286em;
@@ -1955,7 +1955,7 @@ html {
     #ac-globalnav .ac-gn-link-iphone {
         background-size: 53px 42px;
         background-repeat: no-repeat;
-        background-image: url(../image_small_1.html)
+        background-image: url(../image_small_2.html)
     }
 }
 
@@ -1978,7 +1978,7 @@ html {
 }
 
 #ac-globalnav .ac-gn-link-tv {
-    background-image: url(../image_large_7.html);
+    background-image: url(../image_large_4.html);
     background-origin: content-box;
     background-size: cover;
     width: 1.28571em;
@@ -2010,7 +2010,7 @@ html {
 }
 
 #ac-globalnav .ac-gn-link-support {
-    background-image: url(../image_large_6.html);
+    background-image: url(../image_large_8.html);
     background-origin: content-box;
     background-size: cover;
     width: 3.71429em;
@@ -2027,7 +2027,7 @@ html {
 
 #ac-globalnav .ac-gn-link-search {
     background-size: 16px 44px;
-    background-image: url(../image_large_8.html);
+    background-image: url(../image_large_9.html);
     width: 16px
 }
 
@@ -2041,7 +2041,7 @@ html {
 
 #ac-globalnav .ac-gn-link-bag {
     background-size: 14px 45px;
-    background-image: url(../image_large_9.html);
+    background-image: url(../image_large_7.html);
     width: 14px
 }
 
@@ -2601,7 +2601,7 @@ html {
     width: 40px;
     height: 44px;
     cursor: pointer;
-    background-image: url(../image_large_8.html);
+    background-image: url(../image_large_9.html);
     background-position: 10px 50%;
     background-repeat: no-repeat;
     -webkit-transition: opacity .2s cubic-bezier(.645, .045, .355, 1);
